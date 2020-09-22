@@ -6,14 +6,14 @@ I cannot find any info about it.
 
 # Protocol
 By inspecting the protocol using an IR receiver I deciphered the following:
-1 start pulse 1009 us
-1 pause 500 us
-12 * 
-  pulse 500us followed by one of the following
-    space 450us == 00
-    space 650us == 01
-    space 900us == 10
-    space 1150us == 11
+ * 1 start pulse 1009 us
+ * 1 pause 500 us
+ * 12 * 
+  * pulse 500us followed by one of the following
+    * space 450us == 00
+    * space 650us == 01
+    *  space 900us == 10
+    *  space 1150us == 11
 
 12 * 2 bits = 24 bits / message.
 Bytes are in low endian order.
