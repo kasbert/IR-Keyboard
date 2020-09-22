@@ -29,31 +29,31 @@ There are two versions of the message.
   * 4 bit zero padding
   * 4 bit checksum
  
-##header
+## header
 * 00000010 key event 
 * 10000010 release key
 * 01000010 repeat key
 * 00100000 button1
 * 01000000 button2
  
-##modifier
+## modifier
 * 0000 0001 shift
 * 0000 0010 alt
 * 0000 0100 ctrl
 * 0000 1000 win
 
-##x
+## x
 signed 6 bit value
 0 = center
 
-##y
+## y
 signed 6 bit value
 0 = center
 
-##checksum
+## checksum
 Number of 1 bits in event + 2
 
-##code
+## code
 * 0x50 A
 * 0x35 B
 * ...
