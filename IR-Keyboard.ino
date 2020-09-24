@@ -384,16 +384,12 @@ bool decodeKeyb(decode_results *results) {
     us = results->rawbuf[offset] * MICROS_PER_TICK;
     if (us >= KEYB_00_SPACE - 100 && us <= KEYB_00_SPACE + 100) {
       data = (data >> 2);
-      //data = (data << 2);
     } else if (us >= KEYB_01_SPACE - 100 && us <= KEYB_01_SPACE + 100) {
       data = (data >> 2) | 0x40000000;
-      //  data = (data << 2) | 1;
     } else if (us >= KEYB_10_SPACE - 100 && us <= KEYB_10_SPACE + 100) {
       data = (data >> 2) | 0x80000000;
-      // data = (data << 2) | 2;
     } else if (us >= KEYB_11_SPACE - 100 && us <= KEYB_11_SPACE + 100) {
       data = (data >> 2) | 0xC0000000;
-      //data = (data << 2) | 3;
     } else {
       DBG_PRINT("ERROR ");
       DBG_PRINT(offset);
@@ -404,7 +400,6 @@ bool decodeKeyb(decode_results *results) {
     offset++;
   }
 
-  results->bits = (offset - 1) / 2;
   results->bits = KEYB_BITS;
   data >>= 4;
 
