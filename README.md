@@ -9,13 +9,13 @@ I cannot find any info about it.
 By inspecting the keyboard protocol using an IR receiver I deciphered the following:
  * 1 start pulse 1000 us
  * 1 pause 500 us
- * 12 * pulse 500us followed by one of the following
+ * 14 * pulse 500us followed by one of the following
     * space 450us == 00
     * space 650us == 01
     *  space 900us == 10
     *  space 1150us == 11
 
-- 12 * 2 bits = 24 bits / message.
+- 14 * 2 bits = 28 bits / message.
 - Bytes are in low endian order.
 - There are two versions of the message:
 1. key message:
@@ -25,8 +25,8 @@ By inspecting the keyboard protocol using an IR receiver I deciphered the follow
   * 4 bit checksum
 2. joy message:
   * 8 bit header
-  * 6 bit x
-  * 6 bit y
+  * 6 bit x signed value, center 0
+  * 6 bit y signed value, center 0
   * 4 bit zero padding
   * 4 bit checksum
  
